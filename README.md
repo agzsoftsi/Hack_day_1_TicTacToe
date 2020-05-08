@@ -21,9 +21,8 @@ Each player must only place their symbol once per turn and must not be on a squa
 ### To Modify:
 
 - Operating System: Windows Xp - Vista - 7 - 10
-- Visual Basic 6.0 - [Download]()
+- Visual Basic 6.0 - [Download](http://www.mediafire.com/file/xjkcz4q9mf2yv4x/Visual_Basic_6.0.rar/file)
+
   
-
-
 # States of the Tic Tac Toe
 ![](states.jpg)
