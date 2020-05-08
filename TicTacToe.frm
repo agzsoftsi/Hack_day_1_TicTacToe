@@ -181,8 +181,13 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+' Declarate variable for the Players
+' We are using two players Player 0 - black and Player 1 is Yellow - both are using the same Variable
+
 Dim Player As Byte
 
+' Restart Button
+' Restart the game - only change the state background of the each element on the game - by default White
 Private Sub Command1_Click()
 T(0).BackColor = vbWhite
 T(1).BackColor = vbWhite
@@ -195,16 +200,29 @@ T(7).BackColor = vbWhite
 T(8).BackColor = vbWhite
 End Sub
 
+' Close Button
+' Close the Application
 Private Sub Command2_Click()
 End
 End Sub
 
+' Main event of the Application when the application is loaded
+' inicializate the player to 0 - Player 0 is Black
 Private Sub Form_Load()
 Player = 0
 End Sub
 
+' Define the basic mechanic of the game
+' Player 0 starts, then Player 2 follows, then Player 0 returns and this is the process of the game until the possibilities are over
+' T is the object, is an array than contains 9 elements
+'
+' t(0) t(1) t(2)
+' t(3) t(4) t(5)
+' t(6) t(7) t(8)
+'
+
+
 Private Sub T_Click(Index As Integer)
-' Definimos la
 If Player = 0 Then
 T(Index).BackColor = vbBlack
 Player = 1
@@ -214,6 +232,9 @@ T(Index).BackColor = vbYellow
 Player = 0
 End If
 
+
+' Define all the possibilities to win for the Player 0 - Black
+' Player 0 - black has 8 ways to Win
 
 If T(0).BackColor = vbBlack And T(1).BackColor = vbBlack And T(2).BackColor = vbBlack Then
 MsgBox ("Player Black: WIN")
@@ -248,7 +269,8 @@ MsgBox ("Player Black: WIN")
 End If
 
 
-
+' Define all the possibilities to win for the Player 1 - Yellow
+' Player 1 - Yellow has 8 ways to Win
 
 If T(0).BackColor = vbYellow And T(1).BackColor = vbYellow And T(2).BackColor = vbYellow Then
 MsgBox ("Player Yellow: WIN")
